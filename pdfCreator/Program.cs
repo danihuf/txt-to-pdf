@@ -35,14 +35,79 @@ namespace pdfCreator
         /// <returns> Location of the file as string </returns>
         static string getInputLocation()
         {
-            System.Console.WriteLine("Welcome to pdfCreator. \n Please enter the location of the .txt file.");
-            string location = Console.ReadLine();
-            return location;
+            System.Console.WriteLine("Welcome to pdfCreator. \nPlease enter the location of the .txt file.");
+            string inputLoc = Console.ReadLine();
+            if (File.Exists(inputLoc))
+            {
+                return inputLoc;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                System.Console.WriteLine("==============================");
+                System.Console.WriteLine("Please enter a valid location");
+                System.Console.WriteLine("==============================");
+                Console.ResetColor();
+                getInputLocation();
+            }
         }
 
-        //static string getOutputLocation()
+        static string getOutputName()
+        {
+            System.Console.WriteLine("Please enter a name for the pdf file");
+            string outputName = Console.ReadLine();
+            if(IsValidFilename(outputName)){
+                return outputName;
+            }
+            else{
+                Console.ForegroundColor = ConsoleColor.Red;
+                System.Console.WriteLine("==============================");
+                System.Console.WriteLine("Please enter a valid name.\nDon't include: < > : \" / \\ | ? * ");
+                System.Console.WriteLine("==============================");
+                Console.ResetColor();
+                getOutputName();
+            }
+        }
+
+        static string getOutputLocation()
+        {
+            System.Console.WriteLine("Where do you want to save the pdf file? Please input the full path.");
+            string outputLoc = Console.ReadLine();
+            if (Directory.Exists(outputLoc))
+            {
+                return outputLoc;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                System.Console.WriteLine("==============================");
+                System.Console.WriteLine("Please enter a valid location");
+                System.Console.WriteLine("==============================");
+                Console.ResetColor();
+                getOutputLocation();
+            }
+        }
+
+        /// <summary>
+        /// Checks if the given string is a valid file name for windows.
+        /// </summary>
+        /// <param name="testName"> The name to test </param>
+        /// <returns></returns>
+        static bool IsValidFilename(string testName)
+        {
+            Regex containsABadCharacter = new Regex("["
+                  + Regex.Escape(new string(System.IO.Path.GetInvalidPathChars())) + "]");
+            if (containsABadCharacter.IsMatch(testName)) { return false; };
+            return true;
+        }
 
 
+        /// <summary>
+        /// Function generates a pdf document containing the content of a text file.
+        /// </summary>
+        /// <param name="inputLocation"> The text files location </param>
+        /// <param name="outputLocation"> The pdf's location. File gets saved here. </param>
+        /// <param name="name"> The pdf's name </param>
         static void generatePdf(string inputLocation, string outputLocation, string name)
         {
             try
@@ -57,8 +122,8 @@ namespace pdfCreator
                     pdf.Info.Title = name;
                     // add first page to pdf document
                     PdfPage page = pdf.AddPage();
-                        XGraphics gfx = XGraphics.FromPdfPage(page);
-                        XFont font = new XFont("Monospace", 10, XFontStyle.Regular); //! font not changing
+                    XGraphics gfx = XGraphics.FromPdfPage(page);
+                    XFont font = new XFont("Monospace", 10, XFontStyle.Regular); //! font not changing
                     // line position x axis
                     int xLinePostition = 0;
 
@@ -81,15 +146,12 @@ namespace pdfCreator
                     }
 
                     pdf.Save(@"C:\Users\Daniel\Documents\vs code\myProjects\file.pdf");
-
+                    System.Console.WriteLine($"PDF successfully created. You can find our file at: ");
 
 
                 }
             }
-            finally{
-                //nothing
-            }
-            /*
+
             catch (FileNotFoundException e)
             {
                 // start program again when false input was made
@@ -102,7 +164,7 @@ namespace pdfCreator
             {
                 System.Console.WriteLine(e.Message);
             }
-            */
+
         }
 
     }
