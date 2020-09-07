@@ -6,7 +6,6 @@ using PdfSharp.Pdf;
 using System.Drawing;
 
 
-
 namespace pdfCreator
 {
     class Program
@@ -14,16 +13,18 @@ namespace pdfCreator
         static void Main(string[] args)
         {
             string path = @"C:\Users\Daniel\Documents\vs code\myProjects\test.txt";
-            Run(path);
+            Run();
+            // C:\Users\Daniel\Downloads\54296046.txt
         }
 
         static void Run(string path = "")
         {
             if (path.Equals(""))
             {
-                generatePdf(getLocation(), "test");
+                generatePdf(getInputLocation(), "test");
             }
-            else{
+            else
+            {
                 generatePdf(path, "test");
             }
         }
@@ -32,31 +33,32 @@ namespace pdfCreator
         /// Prompts the user to enter the files location
         /// </summary>
         /// <returns> Location of the file as string </returns>
-        public static string getLocation()
+        static string getInputLocation()
         {
             System.Console.WriteLine("Welcome to pdfCreator. \n Please enter the location of the .txt file.");
             string location = Console.ReadLine();
             return location;
         }
 
+        //static string getOutputLocation()
 
-        static void generatePdf(string location, string name)
+
+        static void generatePdf(string inputLocation, string outputLocation, string name)
         {
             try
             {
-                using (StreamReader sr = new StreamReader(location))
+                using (StreamReader sr = new StreamReader(inputLocation))
                 {
                     string line;
                     int lineCounter = 0;
-                    int lineThreshold = 50;
+                    int lineThreshold = 80; // max amount of lines on one page (fontsize: 10)
 
                     PdfDocument pdf = new PdfDocument();
                     pdf.Info.Title = name;
                     // add first page to pdf document
                     PdfPage page = pdf.AddPage();
-                    XGraphics gfx = XGraphics.FromPdfPage(page);
-                    //XFont font = new XFont("Verdana", 8, XFontStyle.Bold); //! tweak font size
-                    XFont font = new XFont("Monospace", 10, XFontStyle.Regular);
+                        XGraphics gfx = XGraphics.FromPdfPage(page);
+                        XFont font = new XFont("Monospace", 10, XFontStyle.Regular); //! font not changing
                     // line position x axis
                     int xLinePostition = 0;
 
@@ -65,13 +67,16 @@ namespace pdfCreator
                         //iterate over all lines in document
                         lineCounter++;
 
-                        gfx.DrawString(line, font, XBrushes.Black, new XRect(0, xLinePostition, page.Width, page.Height), XStringFormats.TopLeft);
+                        gfx.DrawString($"{line}", font, XBrushes.Black, new XRect(0, xLinePostition, page.Width, 0), XStringFormats.Default);
                         xLinePostition += 10;
 
                         if (lineCounter > lineThreshold)
                         {
-                            // create new page
-
+                            // create new page and append to document
+                            page = pdf.AddPage();
+                            gfx = XGraphics.FromPdfPage(page);
+                            lineCounter = 0;
+                            xLinePostition = 0;
                         }
                     }
 
@@ -81,6 +86,10 @@ namespace pdfCreator
 
                 }
             }
+            finally{
+                //nothing
+            }
+            /*
             catch (FileNotFoundException e)
             {
                 // start program again when false input was made
@@ -93,6 +102,7 @@ namespace pdfCreator
             {
                 System.Console.WriteLine(e.Message);
             }
+            */
         }
 
     }
