@@ -1,3 +1,3 @@
 # 📂.txt to pdf file converter
 
-A program that takes a .txt file and creates a pdf from it's contents.
+A simple console application that generates a pdf file from a given txt file.
