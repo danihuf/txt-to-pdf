@@ -1,21 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ikGGXPEJLS+uGGLeuQWJhSqMj+gM13Ms6jtxtGwkI6X0C8/xIs1Wx8n0KzfHmoVOQadC8ycg/eB7tRl4cxkD3Q==",
+  "dgSpecHash": "Ai3KHQiOjtASn/AO1AQGnB7rGmSSh7AGfAFThv9t5D0ws1stdou9ae4NA+pxTfiXuin7M6ciyEwyrMMwy0oGHA==",
   "success": true,
-  "projectFilePath": "/home/daniel/Documents/vscode/my_projects/pdfCreator/pdfCreator/pdfCreator/pdfCreator.csproj",
+  "projectFilePath": "C:\\Users\\Daniel\\Documents\\vs code\\myProjects\\pdfCreator\\pdfCreator\\pdfCreator.csproj",
   "expectedPackageFiles": [
-    "/home/daniel/.nuget/packages/pdfsharp-wpf/1.51.5185-beta/pdfsharp-wpf.1.51.5185-beta.nupkg.sha512"
+    "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\Daniel\\.nuget\\packages\\pdfsharp.netstandard\\1.3.2\\pdfsharp.netstandard.1.3.2.nupkg.sha512",
+    "C:\\Users\\Daniel\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'PDFsharp-wpf 1.51.5185-beta' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "PDFsharp-wpf",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -3,7 +3,8 @@ using System.IO;
 using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
-using PresentationCore;
+using System.Drawing;
+
 
 
 namespace pdfCreator
@@ -12,12 +13,19 @@ namespace pdfCreator
     {
         static void Main(string[] args)
         {
-            Run();
+            string path = @"C:\Users\Daniel\Documents\vs code\myProjects\test.txt";
+            Run(path);
         }
 
-        static void Run()
+        static void Run(string path = "")
         {
-            generatePdf(getLocation(), "test");
+            if (path.Equals(""))
+            {
+                generatePdf(getLocation(), "test");
+            }
+            else{
+                generatePdf(path, "test");
+            }
         }
 
         /// <summary>
@@ -47,16 +55,18 @@ namespace pdfCreator
                     // add first page to pdf document
                     PdfPage page = pdf.AddPage();
                     XGraphics gfx = XGraphics.FromPdfPage(page);
-                    XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
-
+                    //XFont font = new XFont("Verdana", 8, XFontStyle.Bold); //! tweak font size
+                    XFont font = new XFont("Monospace", 10, XFontStyle.Regular);
+                    // line position x axis
+                    int xLinePostition = 0;
 
                     while ((line = sr.ReadLine()) != null)
                     {
                         //iterate over all lines in document
                         lineCounter++;
 
-                        gfx.DrawString(line, font, XBrushes.Black, new XRect(0, 0, page.Width, page.Height));
-
+                        gfx.DrawString(line, font, XBrushes.Black, new XRect(0, xLinePostition, page.Width, page.Height), XStringFormats.TopLeft);
+                        xLinePostition += 10;
 
                         if (lineCounter > lineThreshold)
                         {
@@ -65,8 +75,8 @@ namespace pdfCreator
                         }
                     }
 
-                    pdf.Save(location);
-                    
+                    pdf.Save(@"C:\Users\Daniel\Documents\vs code\myProjects\file.pdf");
+
 
 
                 }

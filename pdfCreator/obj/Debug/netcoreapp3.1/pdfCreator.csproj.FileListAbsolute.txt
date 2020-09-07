@@ -21,3 +21,23 @@
 /home/daniel/Documents/vscode/my_projects/pdfCreator/pdfCreator/pdfCreator/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll
 /home/daniel/Documents/vscode/my_projects/pdfCreator/pdfCreator/pdfCreator/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll
 /home/daniel/Documents/vscode/my_projects/pdfCreator/pdfCreator/pdfCreator/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.csprojAssemblyReference.cache
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.AssemblyInfoInputs.cache
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.AssemblyInfo.cs
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.pdb
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\pdfCreator.exe
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\pdfCreator.deps.json
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\pdfCreator.runtimeconfig.json
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\pdfCreator.runtimeconfig.dev.json
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\pdfCreator.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\pdfCreator.pdb
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.csproj.CopyComplete
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\obj\Debug\netcoreapp3.1\pdfCreator.genruntimeconfig.cache
+C:\Users\Daniel\Documents\vs code\myProjects\pdfCreator\pdfCreator\bin\Debug\netcoreapp3.1\PdfSharp.netstandard.dll
