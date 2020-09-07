@@ -1,11 +1,51 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "PDFsharp-wpf/1.51.5185-beta": {
+        "type": "package",
+        "compile": {
+          "lib/net30/PdfSharp-wpf.dll": {},
+          "lib/net30/PdfSharp.Charting-wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net30/PdfSharp-wpf.dll": {},
+          "lib/net30/PdfSharp.Charting-wpf.dll": {}
+        },
+        "resource": {
+          "lib/net30/de/PdfSharp-wpf.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net30/de/PdfSharp.Charting-wpf.resources.dll": {
+            "locale": "de"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PDFsharp-wpf/1.51.5185-beta": {
+      "sha512": "DfUV/Lx8XLuUq/5RgmBnFJks5sTfwhEJjWBBhj+8k7OE6yde55rH+FtNs+rc7P1VfS35QpIX3XJbbpDiJ5Ykrg==",
+      "type": "package",
+      "path": "pdfsharp-wpf/1.51.5185-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net30/PdfSharp-wpf.dll",
+        "lib/net30/PdfSharp-wpf.xml",
+        "lib/net30/PdfSharp.Charting-wpf.dll",
+        "lib/net30/PdfSharp.Charting-wpf.xml",
+        "lib/net30/de/PdfSharp-wpf.resources.dll",
+        "lib/net30/de/PdfSharp.Charting-wpf.resources.dll",
+        "pdfsharp-wpf.1.51.5185-beta.nupkg.sha512",
+        "pdfsharp-wpf.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "PDFsharp-wpf >= 1.51.5185-beta"
+    ]
   },
   "packageFolders": {
     "/home/daniel/.nuget/packages/": {}
@@ -41,6 +81,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "PDFsharp-wpf": {
+            "target": "Package",
+            "version": "[1.51.5185-beta, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -59,5 +105,17 @@
         "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PDFsharp-wpf 1.51.5185-beta' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "PDFsharp-wpf",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

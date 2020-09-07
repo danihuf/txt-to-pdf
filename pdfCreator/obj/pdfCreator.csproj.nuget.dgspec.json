@@ -35,6 +35,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "PDFsharp-wpf": {
+              "target": "Package",
+              "version": "[1.51.5185-beta, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
