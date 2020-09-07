@@ -4,6 +4,7 @@ using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 
 namespace pdfCreator
@@ -12,21 +13,27 @@ namespace pdfCreator
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\Daniel\Documents\vs code\myProjects\test.txt";
             Run();
-            // C:\Users\Daniel\Downloads\54296046.txt
         }
 
-        static void Run(string path = "")
+        /// <summary>
+        /// Runs the program
+        /// </summary>
+        static void Run()
         {
-            if (path.Equals(""))
+            ConsoleKeyInfo input;
+            do
             {
-                generatePdf(getInputLocation(), "test");
-            }
-            else
-            {
-                generatePdf(path, "test");
-            }
+                string inputLoc = getInputLocation();
+                string name = getOutputName();
+                string outputLoc = getOutputLocation();
+                generatePdf(inputLoc, outputLoc, name);
+
+                System.Console.WriteLine("=====================================================");
+                System.Console.WriteLine("Press ESC to exit or any key to generate another pdf");
+                System.Console.WriteLine("=====================================================");
+                input = Console.ReadKey();
+            } while (input.Key != ConsoleKey.Escape);
         }
 
         /// <summary>
@@ -48,25 +55,27 @@ namespace pdfCreator
                 System.Console.WriteLine("Please enter a valid location");
                 System.Console.WriteLine("==============================");
                 Console.ResetColor();
-                getInputLocation();
             }
+            return getInputLocation();
         }
 
         static string getOutputName()
         {
             System.Console.WriteLine("Please enter a name for the pdf file");
             string outputName = Console.ReadLine();
-            if(IsValidFilename(outputName)){
+            if (IsValidFilename(outputName))
+            {
                 return outputName;
             }
-            else{
+            else
+            {
                 Console.ForegroundColor = ConsoleColor.Red;
                 System.Console.WriteLine("==============================");
                 System.Console.WriteLine("Please enter a valid name.\nDon't include: < > : \" / \\ | ? * ");
                 System.Console.WriteLine("==============================");
                 Console.ResetColor();
-                getOutputName();
             }
+            return getOutputName();
         }
 
         static string getOutputLocation()
@@ -84,8 +93,8 @@ namespace pdfCreator
                 System.Console.WriteLine("Please enter a valid location");
                 System.Console.WriteLine("==============================");
                 Console.ResetColor();
-                getOutputLocation();
             }
+            return getOutputLocation();
         }
 
         /// <summary>
@@ -96,7 +105,8 @@ namespace pdfCreator
         static bool IsValidFilename(string testName)
         {
             Regex containsABadCharacter = new Regex("["
-                  + Regex.Escape(new string(System.IO.Path.GetInvalidPathChars())) + "]");
+                + Regex.Escape(new string(System.IO.Path.GetInvalidPathChars()))
+                + "]");
             if (containsABadCharacter.IsMatch(testName)) { return false; };
             return true;
         }
@@ -145,8 +155,8 @@ namespace pdfCreator
                         }
                     }
 
-                    pdf.Save(@"C:\Users\Daniel\Documents\vs code\myProjects\file.pdf");
-                    System.Console.WriteLine($"PDF successfully created. You can find our file at: ");
+                    pdf.Save($"{outputLocation}{name}.pdf");
+                    System.Console.WriteLine($"PDF successfully created. You can find our file at: {outputLocation}");
 
 
                 }
