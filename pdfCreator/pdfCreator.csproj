@@ -4,6 +4,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="PdfSharp" Version="1.50.5147"/>
+    <PackageReference Include="PDFsharp-wpf" Version="1.51.5185-beta"/>
   </ItemGroup>
 </Project>
